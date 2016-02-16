@@ -19,8 +19,8 @@ defmodule Cryptocaching.Router do
     get "/", PageController, :index
   end
 
-  # Other scopes may use custom stacks.
-  # scope "/api", Cryptocaching do
-  #   pipe_through :api
-  # end
+  scope "/api", Cryptocaching do
+     pipe_through :api
+         resources "/cryptocaches", CryptoCacheController
+  end
 end
